@@ -37,12 +37,12 @@ You can use a local MongoDB instance or connect to a MongoDB Atlas cluster.
 cd backend
 npm install
 
-# Create an .env file inside the backend folder (see below)
+- Create an .env file inside the backend folder (see below)
 
 npm start
 
 3. Run the Frontend
-
+   
 cd frontend
 npm install
 npm start
