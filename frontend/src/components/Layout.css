@@ -1,0 +1,113 @@
+/* Layout replacement for MUI AppBar + Drawer */
+@import url('../styles/style.css');
+
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  background: var(--background-default, #f5f5f5);
+}
+
+.app-appbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background: var(--surface, #fff);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.app-toolbar {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.app-title {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-primary, #222);
+  flex-grow: 1;
+}
+
+.app-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--secondary-main, #9c27b0);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.app-drawer {
+  width: 240px;
+  padding-top: 64px;
+  background: var(--surface, #fff);
+  border-right: 1px solid rgba(0,0,0,0.04);
+}
+
+.drawer-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.drawer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawer-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  color: var(--text-secondary, #666);
+}
+
+.drawer-list-item i {
+  width: 24px;
+  text-align: center;
+}
+
+.drawer-list-item.active {
+  background: rgba(81,45,168,0.06);
+  color: var(--primary-main, #512da8);
+  font-weight: 600;
+}
+
+.app-main {
+  flex-grow: 1;
+  padding: 88px 24px 24px 24px; /* leave room for fixed header */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .app-drawer { display: none; position: absolute; z-index: 1200; left: 0; top: 64px; }
+  .app-drawer[style] { display: block; }
+}
